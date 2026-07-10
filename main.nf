@@ -116,12 +116,17 @@ if (params.skip_sort) {
 
     if (runAnalysis('sv'))
         SV(sorted_bam, params.reference)
+
+    if (runAnalysis('str'))
+        STR(sorted_bam, params.reference)
+
+
 /*
 *    if (runAnalysis('cnv'))
 *        CNV(bam_ch)
 *
-*    if (runAnalysis('str'))
-*        STR(bam_ch)
+* 
+*       
 *
 *
 *    if (runAnalysis('meth')
@@ -251,7 +256,7 @@ process SNV {
 
 /*
 =====================================================
-  SV CALLING (sniffles2 & Straglr)
+  SV CALLING (sniffles2)
 =====================================================
 */
 
@@ -283,19 +288,25 @@ process SV {
 
 process STR {
 
-    container
+    container 'straglr:1.5.6'
     cpus 4
 
+    publishDir "${params.outdir}/STR_calls", mode: 'copy'
+
     input:
-    path bam
-    path ref
+    tuple val(sample_id), path(bam), path(bai) 
+    path(ref)
 
     output:
-    path "str.txt"
+    path "${sample_id}_str*"
 
     script:
     """
-    stranglr
+    straglr.py \
+        $bam \
+        $ref \
+        ${sample_id}_str \
+        --nprocs ${task.cpus}
     """
 }
 
