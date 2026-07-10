@@ -1,0 +1,10 @@
+.nextflow/
+.nextflow.log*
+work/
+results/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/
+.idea/
