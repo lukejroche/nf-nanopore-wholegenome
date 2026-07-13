@@ -120,8 +120,8 @@ if (params.skip_sort) {
         mosdepth(sorted_bam)
         CNV(sorted_bam, params.reference, mosdepth.out)
 
-    if (runAnalysis('mosdepth'))
-        mosdepth(sorted_bam)
+    if (runAnalysis('methylation'))
+        MODKIT(sorted_bam, params.reference)
 
 
 /*
@@ -377,18 +377,33 @@ process CNV {
 =====================================================
 */
 
-process METH {
+process MODKIT {
+    container "ontresearch/modkit:latest"
+    cpus 4
+
+    publishDir "$params.outdir/methylation", mode: 'copy',
+        saveAs: { filename -> "${sample_id}/${filename}" }
 
     input:
-    path bam
+    tuple val(sample_id), path(bam), path(bai)
+    path reference
 
     output:
-    path "methylation.txt"
+    tuple path("${sample_id}.bed"),
+    path("%{sample_id}.bed.tbi")
+
 
     script:
     """
-    modkit
+    modkit pileup \
+        ${bam} \
+        ${sample_id}.bed \
+        --ref ${reference} \
+        --threads ${task.cpus}
+
     """
+
+
 }
 
 /* PHASING 
