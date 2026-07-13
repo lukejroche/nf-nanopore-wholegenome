@@ -1,0 +1,38 @@
+FROM python:3.11-slim
+
+# Metadata
+LABEL VERSION="0.2.0.alpha"
+LABEL NAME="Spectre:${VERSION}"
+LABEL AUTHOR="Philippe Sanio"
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN wget -O /usr/local/bin/mosdepth \
+    https://github.com/brentp/mosdepth/releases/download/v0.3.11/mosdepth \
+    && chmod +x /usr/local/bin/mosdepth
+
+# Path: /app
+WORKDIR /app/Spectre
+
+# pip install requirements.txt
+COPY requirements.txt .
+
+# pip install
+RUN pip install --no-cache-dir --upgrade pip \
+  && pip install --no-cache-dir -r requirements.txt
+
+RUN pip install -U setuptools wheel build
+
+# copy Spectre directory
+COPY . .
+
+RUN python -m build
+
+# Install what ever the dist folder contains and ends with .tar.gz
+RUN pip install --no-cache-dir dist/*.tar.gz
+RUN pip install --no-cache-dir .
+RUN pip install "numpy<2"
+# Start the application
+CMD ["bash"]
