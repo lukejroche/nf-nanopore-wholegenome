@@ -27,12 +27,8 @@ params.threads    = 8
  * ============================================================================
  * Parse analysis list
  * ============================================================================
- */
 
-/*def analysis = params.analysis
- *                   .split(',')
- *                   .trim()
- *                   .toLowerCase()
+/*def analysis = params.analysis.split(',').trim().toLowerCase()
 */
 
 boolean runAnalysis(String name) {
@@ -121,7 +117,9 @@ if (params.skip_sort) {
         STR(sorted_bam, params.reference)
 
     if (runAnalysis('cnv'))
-        CNV(sorted_bam, params.reference)
+        mosdepth(sorted_bam)
+        CNV(sorted_bam, params.reference, mosdepth.out)
+
     if (runAnalysis('mosdepth'))
         mosdepth(sorted_bam)
 
@@ -325,8 +323,8 @@ process mosdepth {
     tuple val(sample_id), path(bam), path(bai)
     
     output:
-    path("${sample_id}.regions.bed.gz")
-    path("${sample_id}.regions.bed.gz.csi")
+    tuple path("${sample_id}.regions.bed.gz"),
+    path("${sample_id}.regions.bed.gz.csi"),
     path("${sample_id}.mosdepth.summary.txt")
 
     
@@ -348,26 +346,26 @@ process CNV {
     container "spectre:0.2.1"
     cpus 4
 
-    publishDir "${params.outdir}/STR_calls", mode: 'copy'
+    publishDir "${params.outdir}/CNV_calls", mode: 'copy'
 
     input:
     tuple val(sample_id), path(bam), path(bai)
     path ref
+    tuple path(regions), path(csi), path(summary)
 
     output:
-    path "${sample_id}_cnv.vcf"
+    tuple path("${sample_id}.vcf.gz"),
+    path("${sample_id}.vcf.gz.tbi"),
+    path("${sample_id}_cnv.bed.gz")
+    path("${sample_id}_cnv.bed.gz.tbi")
 
     script:
     """
-    mosdepth -t 8 -x -b 1000 -Q 20 ${params.outdir}/${sample_id} ${bam}
-    
-    
-    
     spectre CNVCaller \
-        --bam $bam \
-        --output-dir ${params.outdir} \
-        --output-file ${sample_id}_cnv \
-        --reference $ref
+        --coverage ${regions} \
+        --output-dir ./ \
+        --sample-id ${sample_id} \
+        --reference $ref \
         --threads ${task.cpus}
     """
 }
@@ -394,7 +392,7 @@ process METH {
 }
 
 /* PHASING 
-
+*/
 
 /*
 =====================================================
