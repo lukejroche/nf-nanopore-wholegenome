@@ -67,7 +67,7 @@ if (params.skip_sort) {
 
     sorted_bam = SORT_INDEX(bam_ch)
 }
-    
+
 
 
 
@@ -116,21 +116,16 @@ if (params.skip_sort) {
     if (runAnalysis('str'))
         STR(sorted_bam, params.reference)
 
-    if (runAnalysis('cnv'))
+    if (runAnalysis('cnv')) {
         mosdepth(sorted_bam)
         CNV(sorted_bam, params.reference, mosdepth.out)
+    }
 
     if (runAnalysis('methylation'))
         MODKIT(sorted_bam, params.reference)
 
-
+    
 /*
-* 
-*       
-*
-*
-*    if (runAnalysis('meth')
-*        METHYLATION(bam_ch)
 *
 *    if (runAnalysis('benchmark'))
 *        BENCHMARK()
@@ -389,8 +384,8 @@ process MODKIT {
     path reference
 
     output:
-    tuple path("${sample_id}.bed"),
-    path("%{sample_id}.bed.tbi")
+    path("${sample_id}.bed")
+    
 
 
     script:
@@ -400,6 +395,8 @@ process MODKIT {
         ${sample_id}.bed \
         --ref ${reference} \
         --threads ${task.cpus}
+
+
 
     """
 
