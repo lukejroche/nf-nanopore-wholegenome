@@ -1,11 +1,11 @@
+# Nextflow runtime
 .nextflow/
 .nextflow.log*
 work/
+
+# Default output directory
 results/
+
+# OS / editor cruft
 .DS_Store
-Thumbs.db
-__pycache__/
-*.pyc
-.vscode/
-.idea/
-data/
+*.swp
