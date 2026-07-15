@@ -1,3 +1,5 @@
+*Work in progess*
+
 # ont-multiomics-nf
 
 Long-read (Oxford Nanopore) multi-omics pipeline QC, SNV
