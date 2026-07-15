@@ -4,6 +4,10 @@ Long-read (Oxford Nanopore) multi-omics pipeline QC, SNV
 (Clair3), SV (Sniffles2), STR (Straglr), CNV (mosdepth + Spectre) and
 methylation (modkit) calling.
 
+test data from https://registry.opendata.aws/ont-open-data/
+
+against reference http://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/chr22.fa.gz
+
 ## Usage
 
 ```bash

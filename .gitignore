@@ -9,3 +9,6 @@ results/
 # OS / editor cruft
 .DS_Store
 *.swp
+
+run_snv_benchmark.sh
+vcfeval_results/

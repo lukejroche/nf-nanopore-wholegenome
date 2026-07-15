@@ -18,7 +18,7 @@ process SNV {
     /opt/bin/run_clair3.sh \
         -b ${bam} \
         -f ${ref} \
-        -m /opt/models/r1041_e82_400bps_hac_v600 \
+        -m /opt/models/r1041_e82_400bps_hac_v500 \
         --threads ${task.cpus} \
         --platform ont \
         --output snv_out
