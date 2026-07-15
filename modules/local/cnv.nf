@@ -1,7 +1,7 @@
 process CNV {
 
     container "spectre:0.2.1"
-
+    label "${params.machine}"
     publishDir "${params.outdir}/CNV_calls", mode: 'copy'
 
     input:

@@ -1,7 +1,7 @@
 process SV {
 
     container "quay.io/biocontainers/sniffles:2.6.3--pyhdfd78af_0"
-
+    label "${params.machine}"
     publishDir "${params.outdir}/SV_calls", mode: 'copy'
 
     input:
