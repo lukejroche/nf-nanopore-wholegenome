@@ -5,7 +5,7 @@ LABEL VERSION="0.2.0.alpha"
 LABEL NAME="Spectre:${VERSION}"
 LABEL AUTHOR="Philippe Sanio"
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y procps \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
