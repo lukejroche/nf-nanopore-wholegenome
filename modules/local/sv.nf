@@ -18,7 +18,7 @@ process SV {
         --vcf ${sample_id}_sv.vcf \
         --threads ${task.cpus} \
         --reference ${ref} \
-        --snf ${sample_id}_sv.snf
+        --snf ${sample_id}_sv.snf \
         --minsupport 4 
     """
 }

@@ -17,7 +17,7 @@ process STR {
         ${bam} \
         ${ref} \
         ${sample_id}_str \
-        --nprocs ${task.cpus}
+        --nprocs ${task.cpus} \
         --min_support 5
     """
 }
