@@ -23,5 +23,6 @@ process CNV {
         --sample-id ${sample_id} \
         --reference ${ref} \
         --threads ${task.cpus}
+        --min-variant-reads 5
     """
 }

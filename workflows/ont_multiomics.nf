@@ -64,13 +64,14 @@ workflow ONT_MULTIOMICS {
     } else {
         sorted_bam = SORT_INDEX(bam_ch)
     }
+    ref_ch = Channel.value(file(params.reference))
 
     // Downstream analyses, opt-in via --analysis
     if (runAnalysis('qc'))
         QC(sorted_bam)
 
     if (runAnalysis('snv'))
-        SNV(sorted_bam, params.reference)
+        SNV(sorted_bam, ref_ch)
 
     if (runAnalysis('sv'))
         SV(sorted_bam, params.reference)

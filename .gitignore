@@ -1,14 +1,10 @@
-# Nextflow runtime
+
 .nextflow/
 .nextflow.log*
 work/
-
-# Default output directory
 results/
-
-# OS / editor cruft
+data/
 .DS_Store
 *.swp
-
 run_snv_benchmark.sh
 vcfeval_results/

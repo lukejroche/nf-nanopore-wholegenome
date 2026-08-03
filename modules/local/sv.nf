@@ -19,5 +19,6 @@ process SV {
         --threads ${task.cpus} \
         --reference ${ref} \
         --snf ${sample_id}_sv.snf
+        --minsupport 4 
     """
 }
