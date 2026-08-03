@@ -23,11 +23,8 @@ include { MODKIT     } from '../modules/local/modkit'
  * --analysis 'qc,snv,sv' -> ['qc','snv','sv']
  * Case-insensitive, whitespace-tolerant.
  *
- * This is a function, not a bare top-level variable, because Nextflow's
- * strict parser (default since 26.04) doesn't allow plain statements
- * mixed in alongside process/workflow/include declarations in a file --
- * only declarations themselves.
  */
+
 def parseAnalyses() {
     (params.analysis ?: '')
         .split(',')
@@ -93,6 +90,4 @@ workflow ONT_MULTIOMICS {
         MODKIT(sorted_bam, params.reference)
 
     // Future: benchmark/annotate steps were sketched in the original
-    // file's comments but never implemented -- no BENCHMARK/ANNOTATE
-    // process exists yet.
 }
