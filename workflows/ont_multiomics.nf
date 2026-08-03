@@ -74,18 +74,18 @@ workflow ONT_MULTIOMICS {
         SNV(sorted_bam, ref_ch)
 
     if (runAnalysis('sv'))
-        SV(sorted_bam, params.reference)
+        SV(sorted_bam, ref_ch)
 
     if (runAnalysis('str'))
-        STR(sorted_bam, params.reference)
+        STR(sorted_bam, ref_ch)
 
     if (runAnalysis('cnv')) {
         MOSDEPTH(sorted_bam)
-        CNV(sorted_bam, params.reference, MOSDEPTH.out)
+        CNV(sorted_bam, ref_ch, MOSDEPTH.out)
     }
 
     if (runAnalysis('methylation'))
-        MODKIT(sorted_bam, params.reference)
+        MODKIT(sorted_bam, ref_ch)
 
-    // Future: benchmark/annotate steps were sketched in the original
+    // Future: benchmark/annotate
 }
