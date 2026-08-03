@@ -1,7 +1,7 @@
 process QC {
 
     publishDir "${params.outdir}/QC", mode: 'copy'
-
+    label "process_low"
     input:
     tuple val(sample_id), path(bam), path(bai)
 

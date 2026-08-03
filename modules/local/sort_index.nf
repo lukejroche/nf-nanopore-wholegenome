@@ -1,5 +1,5 @@
 process SORT_INDEX {
-    label "${params.machine}"
+    label "process_medium"
     publishDir "${params.outdir}/sorted_bams", mode: 'copy'
 
     input:

@@ -1,7 +1,7 @@
 process STR {
 
     container "straglr:1.5.6"
-    label "${params.machine}"
+    label "process_medium"
     publishDir "${params.outdir}/STR_calls", mode: 'copy'
 
     input:

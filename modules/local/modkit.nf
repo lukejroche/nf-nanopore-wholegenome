@@ -1,7 +1,7 @@
 process MODKIT {
 
     container "ontresearch/modkit:latest"
-    label "${params.machine}"
+    label "process_medium"
     publishDir "${params.outdir}/methylation", mode: 'copy',
         saveAs: { filename -> "${sample_id}/${filename}" }
 

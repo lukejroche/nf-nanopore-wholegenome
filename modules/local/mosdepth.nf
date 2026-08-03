@@ -1,7 +1,7 @@
 process MOSDEPTH {
 
     container "spectre:0.2.1"
-    label "${params.machine}"
+    label "process_low"
     publishDir "${params.outdir}/mosdepth", mode: 'copy',
         saveAs: { filename -> "${sample_id}/${filename}" }
 

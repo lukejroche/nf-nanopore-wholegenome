@@ -14,10 +14,7 @@ include { MOSDEPTH   } from '../modules/local/mosdepth'
 include { CNV        } from '../modules/local/cnv'
 include { MODKIT     } from '../modules/local/modkit'
 
-// Not called yet -- uncomment when a FASTQ/pod5 entry point or the
-// aggregate report are wired back in:
-// include { ALIGN  } from '../modules/local/align'
-// include { REPORT } from '../modules/local/report'
+
 
 /*
  * --analysis 'qc,snv,sv' -> ['qc','snv','sv']
