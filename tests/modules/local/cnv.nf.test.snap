@@ -1,0 +1,21 @@
+{
+    "Should run without failures": {
+        "content": [
+            {
+                "0": [
+                    [
+                        "HG002.vcf.gz:md5,14a73f1c7b8b69adb842f1336394692b",
+                        "HG002.vcf.gz.tbi:md5,4cb176febbc8c26d717a6c6e67b9c905",
+                        "HG002_cnv.bed.gz:md5,d41d8cd98f00b204e9800998ecf8427e",
+                        "HG002_cnv.bed.gz.tbi:md5,dc55f38678651304de7e624cde641684"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-08-04T16:04:46.708292476",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    }
+}

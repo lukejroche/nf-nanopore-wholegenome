@@ -1,0 +1,20 @@
+{
+    "Should run without failures": {
+        "content": [
+            {
+                "0": [
+                    [
+                        "HG002.regions.bed.gz:md5,59f57cd38af42c793f84afbeee9b334f",
+                        "HG002.regions.bed.gz.csi:md5,b04545589afb4b1afbd48b09cd099f2d",
+                        "HG002.mosdepth.summary.txt:md5,f13e33431c192ce895d180e3d5269b7c"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-08-04T15:57:51.627090702",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    }
+}
