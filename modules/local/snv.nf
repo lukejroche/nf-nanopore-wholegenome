@@ -1,6 +1,6 @@
 process SNV {
 
-    container "hkubal/clair3:latest"
+    container "hkubal/clair3:2.0.2"
     label "process_high"
     publishDir "${params.outdir}/SNV_calls", mode: 'copy'
 
