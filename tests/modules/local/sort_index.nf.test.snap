@@ -1,0 +1,20 @@
+{
+    "Should run without failures": {
+        "content": [
+            {
+                "0": [
+                    [
+                        "HG002",
+                        "HG002_sorted.bam:md5,29ac946080448d5643843ec8eac58037",
+                        "HG002_sorted.bam.bai:md5,5aa9e8846e84d74e3936c8925df558a8"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-08-04T16:14:53.041207855",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.4"
+        }
+    }
+}

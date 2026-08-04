@@ -1,0 +1,29 @@
+nextflow_process {
+
+    name "Test Process QC"
+    script "modules/local/qc.nf"
+    process "QC"
+
+    test("Should run without failures") {
+
+        when {
+         
+            process {
+                """
+                input[0] = tuple(
+                                 "HG002",
+                                 file('${projectDir}/tests/data/HG002_small.bam'),
+                                 file('${projectDir}/tests/data/HG002_small.bam.bai')
+                                )
+                """
+            }
+        }
+
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+
+    }
+
+}
