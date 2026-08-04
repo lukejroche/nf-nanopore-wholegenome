@@ -20,7 +20,7 @@ nextflow run main.nf \
     --reference genome.fa \
     --analysis 'qc,snv,sv,cnv,methylation' \
     --outdir results \
-    -profile docker
+    -profile laptop/slurm/aws // aws not wired in yet
 ```
 
 Sample IDs come from the part of the BAM filename before the first `_`
@@ -28,11 +28,10 @@ Sample IDs come from the part of the BAM filename before the first `_`
 
 ## Todo
 - Run variant calls against truth set
-- Try use ISO 15189, benchmarking to set specific filtering parameters for specific FDR against truth set for variant called data
-- Work out criteria needed for clinical relevance scoring	Germline Tiering (ACMG/AMP)	Somatic Tiering (AMP/ASCO/CAP)
-- Integrate ensemble VEP, clinvar and gnomAD 
+- Implement ISO 15189, benchmarking to set specific filtering parameters for specific FDR against truth set for variant called data
+- Implement and label criteria needed for clinical relevance scoring - Germline Tiering (ACMG/AMP) or Somatic Tiering (AMP/ASCO/CAP)
+- Integrate ensemble VEP, clinvar and gnomAD
 - handle multiple chromosomes
 - handle multiple samples
 - handle AWS
-- handle SLURM
 - handle parent data
