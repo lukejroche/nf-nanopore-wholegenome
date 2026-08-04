@@ -1,0 +1,12 @@
+name: nanopore_pipeline
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - samtools[version='>=1.18']
+  - bcftools[version='>=1.18']
+  - minimap2[version='>=2.26']
+  - bedtools
+  - pip
+prefix: /home/lroche/miniconda3/envs/nanopore_pipeline

@@ -22,7 +22,6 @@ process CNV {
         --output-dir ./ \
         --sample-id ${sample_id} \
         --reference ${ref} \
-        --threads ${task.cpus} \
-        --min-variant-reads 5
+        --threads ${task.cpus} 
     """
 }

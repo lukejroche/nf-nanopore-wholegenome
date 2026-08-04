@@ -8,3 +8,4 @@ data/
 *.swp
 run_snv_benchmark.sh
 vcfeval_results/
+.nf-test*
