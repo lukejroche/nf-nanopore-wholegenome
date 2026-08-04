@@ -1,0 +1,25 @@
+nextflow_pipeline {
+
+    name "Run main missing reference"
+    script "main.nf"
+
+    test("Should fail due to missing reference") {
+
+        when {
+            params {
+                bam = "${projectDir}/tests/data/HG002_small.bam"
+		reference = ""
+		analysis = "qc,snv,sv,str,cnv,methylation"
+		skip_sort = false
+		outdir = "${projectDir}/tests/results"
+            }
+        }
+
+        then {
+            assert !workflow.success
+    	    assert workflow.stdout.contains("A --reference genome is required for: [snv, sv, str, cnv]")	  
+        }
+
+    }
+
+}

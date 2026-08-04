@@ -1,0 +1,25 @@
+nextflow_pipeline {
+
+    name "Run main missing bam"
+    script "main.nf"
+
+    test("Should fail due to missing bam file") {
+
+        when {
+            params {
+                bam = ""
+		reference = "${projectDir}/tests/data/chr22.fa"
+		analysis = "qc,snv,sv,str,cnv,methylation"
+		skip_sort = false
+		outdir = "${projectDir}/tests/results"
+            }
+        }
+
+        then {
+            assert !workflow.success
+	    assert workflow.stdout*.trim().contains("No valid input supplied.")
+        }
+
+    }
+
+}

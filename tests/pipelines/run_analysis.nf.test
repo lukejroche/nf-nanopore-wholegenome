@@ -1,0 +1,26 @@
+nextflow_pipeline {
+
+    name "Run all analysis"
+    script "main.nf"
+
+    test("Should run without failures") {
+
+        when {
+            params {
+                bam = "${projectDir}/tests/data/HG002_small.bam"
+		reference = "${projectDir}/tests/data/chr22.fa"
+		analysis = "sv"
+		skip_sort = false
+		outdir = "${projectDir}/tests/results"
+            }
+        }
+
+        then {
+            assert workflow.success
+            assert path("${params.outdir}/SV_calls/HG002_sv.vcf").exists()
+	    
+        }
+
+    }
+
+}
