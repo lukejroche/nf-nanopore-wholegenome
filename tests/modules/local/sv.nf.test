@@ -1,0 +1,29 @@
+nextflow_process {
+
+    name "Test Process SV"
+    script "modules/local/sv.nf"
+    process "SV"
+
+    test("Should run without failures") {
+
+        when {
+            process {
+                """
+                input[0] = tuple(
+                                 "HG002",
+                                 file('${projectDir}/tests/data/HG002_small.bam'),
+                                 file('${projectDir}/tests/data/HG002_small.bam.bai')
+                                )
+                input[1] = file("${projectDir}/tests/data/chr22_small.fa")
+                """
+            }
+        }
+
+        then {
+            assert process.success
+            assert snapshot(process.out).match()
+        }
+
+    }
+
+}
