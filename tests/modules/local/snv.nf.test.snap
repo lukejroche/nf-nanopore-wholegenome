@@ -5,13 +5,13 @@
                 "0": [
                     [
                         "HG002",
-                        "HG002_snv.vcf.gz:md5,ddcea1fbec2ba28ed120e42d870be100",
+                        "HG002_snv.vcf.gz:md5,747794fa090942fd5cb7c056907a5e63",
                         "HG002_snv.vcf.gz.tbi:md5,4cb176febbc8c26d717a6c6e67b9c905"
                     ]
                 ]
             }
         ],
-        "timestamp": "2026-08-04T15:05:09.263454484",
+        "timestamp": "2026-08-04T18:45:01.597131579",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"

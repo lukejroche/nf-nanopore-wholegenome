@@ -5,13 +5,13 @@
                 "0": [
                     [
                         "HG002_str.bed:md5,1f079cdda6fcb8e4ab785f3b7513f82f",
-                        "HG002_str.tsv:md5,bf088059cdf65fadf1a34acf663c39ff",
+                        "HG002_str.tsv:md5,c3a16e2874f292b921bc99ff07eb1906",
                         "HG002_str.vcf:md5,f16fc53958fbe084aaaee63703385f1a"
                     ]
                 ]
             }
         ],
-        "timestamp": "2026-08-04T15:44:07.459399676",
+        "timestamp": "2026-08-04T18:55:18.826171771",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"

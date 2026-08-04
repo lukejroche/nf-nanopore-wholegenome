@@ -14,7 +14,7 @@ nextflow_process {
                                  file('${projectDir}/tests/data/HG002_small.bam'),
                                  file('${projectDir}/tests/data/HG002_small.bam.bai')
                                 )
-                input[1] = file("${projectDir}/tests/data/chr22_small.fa")
+                input[1] = file("${projectDir}/tests/data/chr22.fa")
                 """
             }
         }
