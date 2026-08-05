@@ -46,7 +46,7 @@ jobs:
 
       - name: Lint pipeline
         run: |
-          nextflow lint
+          nextflow lint .
 
       - name: Run nf-test
         run: |
