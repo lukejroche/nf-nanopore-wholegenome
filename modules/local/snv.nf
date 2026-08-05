@@ -23,7 +23,7 @@ process SNV {
         --platform ont \
         --output snv_out
 
-    mv snv_out/merge_output.vcf.gz ${sample_id}_snv.vcf.gz
-    mv snv_out/merge_output.vcf.gz.tbi ${sample_id}_snv.vcf.gz.tbi
+    mv snv_out/pileup.vcf.gz ${sample_id}_snv.vcf.gz
+    mv snv_out/pileup.vcf.gz.tbi ${sample_id}_snv.vcf.gz.tbi
     """
 }

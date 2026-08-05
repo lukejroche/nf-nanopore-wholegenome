@@ -1,6 +1,6 @@
 process MOSDEPTH {
 
-    container "spectre:0.2.1"
+    container "ghcr.io/lukejroche/spectre:0.2.1"
     label "process_low"
     publishDir "${params.outdir}/mosdepth", mode: 'copy',
         saveAs: { filename -> "${sample_id}/${filename}" }
