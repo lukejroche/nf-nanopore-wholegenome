@@ -26,6 +26,16 @@ nextflow run main.nf \
 Sample IDs come from the part of the BAM filename before the first `_`
 (`sampleA_sorted.bam` -> `sampleA`)
 
+## Containers
+
+| Tool | Image |
+|------|-------|
+| Clair3 | hkubal/clair3:2.0.2 |
+| Sniffles | quay.io/biocontainers/sniffles:2.6.3--pyhdfd78af_0 |
+| Modkit | ontresearch/modkit:0.6.4 |
+| Spectre | ghcr.io/lukejroche/spectre:0.2.1 |
+| Straglr | ghcr.io/lukejroche/straglr:1.5.6 |
+
 ## Todo
 - Run variant calls against truth set
 - Implement ISO 15189, benchmarking to set specific filtering parameters for specific FDR against truth set for variant called data
