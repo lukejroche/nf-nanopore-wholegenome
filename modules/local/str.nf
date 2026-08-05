@@ -1,6 +1,6 @@
 process STR {
 
-    container "straglr:1.5.6"
+    container "ghcr.io/lukejroche/straglr:1.5.6"
     label "process_medium"
     publishDir "${params.outdir}/STR_calls", mode: 'copy'
 

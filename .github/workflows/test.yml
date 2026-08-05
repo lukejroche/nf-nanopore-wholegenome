@@ -44,6 +44,10 @@ jobs:
           nextflow -version
           nf-test version
 
+      - name: Lint pipeline
+        run: |
+          nextflow lint
+
       - name: Run nf-test
         run: |
           nf-test test

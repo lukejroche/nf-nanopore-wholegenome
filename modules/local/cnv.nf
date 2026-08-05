@@ -1,6 +1,6 @@
 process CNV {
 
-    container "spectre:0.2.1"
+    container "ghcr.io/lukejroche/spectre:0.2.1"
     label "process_medium"
     publishDir "${params.outdir}/CNV_calls", mode: 'copy'
 
