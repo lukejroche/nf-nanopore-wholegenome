@@ -9,3 +9,4 @@ results/
 run_snv_benchmark.sh
 vcfeval_results/
 .nf-test*
+*.html
