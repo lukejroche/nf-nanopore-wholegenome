@@ -3,11 +3,11 @@
         "content": [
             {
                 "0": [
-                    "HG002_sv.vcf:md5,f9500e162c3250bdf3408d2849d7c333"
+                    "HG002_sv.vcf:md5,662da170b1f6147b8de23452cc8e486c"
                 ]
             }
         ],
-        "timestamp": "2026-08-04T18:55:59.711095277",
+        "timestamp": "2026-08-05T19:52:18.296224161",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"

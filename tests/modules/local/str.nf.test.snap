@@ -4,14 +4,14 @@
             {
                 "0": [
                     [
-                        "HG002_str.bed:md5,1f079cdda6fcb8e4ab785f3b7513f82f",
-                        "HG002_str.tsv:md5,c3a16e2874f292b921bc99ff07eb1906",
-                        "HG002_str.vcf:md5,f16fc53958fbe084aaaee63703385f1a"
+                        "HG002_str.bed:md5,cc0d89bb005009a86ed6142fd08af593",
+                        "HG002_str.tsv:md5,b26d87a0a508a175adc31bb239caafdf",
+                        "HG002_str.vcf:md5,986d89051a77f2606833e95c122c047c"
                     ]
                 ]
             }
         ],
-        "timestamp": "2026-08-04T18:55:18.826171771",
+        "timestamp": "2026-08-05T19:40:27.061299891",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"

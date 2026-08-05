@@ -20,5 +20,9 @@ process SV {
         --reference ${ref} \
         --snf ${sample_id}_sv.snf \
         --minsupport 4 
+    
+
+    sed -i '/^##fileDate=/d' ${sample_id}_sv.vcf
+    sed -i '/^##command=/d' ${sample_id}_sv.vcf
     """
 }

@@ -22,5 +22,9 @@ process STR {
         ${regionArg} \
         --nprocs ${task.cpus} \
         --min_support 3
+    
+    sed -i '1d' HG002_str.tsv
     """
+
+    
 }
