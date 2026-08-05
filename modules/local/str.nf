@@ -12,11 +12,14 @@ process STR {
     path "${sample_id}_str*"
 
     script:
+    def regionArg = params.str_regions ? "--regions ${params.str_regions}" : ""
+
     """
     straglr.py \
         ${bam} \
         ${ref} \
         ${sample_id}_str \
+        ${regionArg} \
         --nprocs ${task.cpus} \
         --min_support 3
     """

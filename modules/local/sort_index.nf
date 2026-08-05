@@ -1,4 +1,6 @@
 process SORT_INDEX {
+    
+    container 'mgibio/samtools:v1.21-noble'
     label "process_medium"
     publishDir "${params.outdir}/sorted_bams", mode: 'copy'
 

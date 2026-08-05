@@ -1,7 +1,7 @@
 ##fileformat=VCFv4.2
 ##source=Sniffles2_2.6.3
 ##command="/usr/local/bin/sniffles --input HG002_sorted.bam --vcf HG002_sv.vcf --threads 2 --reference chr22.fa --snf HG002_sv.snf --minsupport 4"
-##fileDate="2026/08/05 15:50:04"
+##fileDate="2026/08/05 17:29:08"
 ##contig=<ID=chr1,length=248956422>
 ##contig=<ID=chr2,length=242193529>
 ##contig=<ID=chr3,length=198295559>

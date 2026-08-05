@@ -1,5 +1,6 @@
 process QC {
 
+    container 'mgibio/samtools:v1.21-noble'
     publishDir "${params.outdir}/QC", mode: 'copy'
     label "process_low"
     input:

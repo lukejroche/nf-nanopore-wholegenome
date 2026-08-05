@@ -2,7 +2,7 @@
 .nextflow/
 .nextflow.log*
 work/
-/results/
+results/
 /data/
 .DS_Store
 *.swp

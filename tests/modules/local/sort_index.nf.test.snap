@@ -5,13 +5,13 @@
                 "0": [
                     [
                         "HG002",
-                        "HG002_sorted.bam:md5,29ac946080448d5643843ec8eac58037",
-                        "HG002_sorted.bam.bai:md5,5aa9e8846e84d74e3936c8925df558a8"
+                        "HG002_sorted.bam:md5,acd8772b97eae7c9ab063fccb59f2fcd",
+                        "HG002_sorted.bam.bai:md5,8dfbb5087cb0062c9b7f45d093018443"
                     ]
                 ]
             }
         ],
-        "timestamp": "2026-08-04T16:14:53.041207855",
+        "timestamp": "2026-08-05T18:14:51.943551419",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.4"
