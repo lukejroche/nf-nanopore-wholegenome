@@ -41,8 +41,8 @@ jobs:
       - name: Show versions
         run: |
           java -version
-          nextflow version
-          nf-test --version
+          nextflow -version
+          nf-test version
 
       - name: Run nf-test
         run: |
