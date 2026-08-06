@@ -19,7 +19,9 @@ jobs:
         uses: nf-core/setup-nextflow@v2
 
       - name: Install nf-core tools
-        uses: nf-core/setup-nf-core@v2
+        run: |
+          python -m pip install nf-core
 
       - name: Run nf-core lint
-        run: nf-core lint .
+        run: |
+          nf-core lint .

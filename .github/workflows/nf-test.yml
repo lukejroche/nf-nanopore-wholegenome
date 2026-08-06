@@ -17,9 +17,13 @@ jobs:
 
       - name: Setup Nextflow
         uses: nf-core/setup-nextflow@v2
+        with:
+          version: 26.04.4
 
       - name: Setup nf-test
         uses: nf-core/setup-nf-test@v1
+        with:
+          version: 0.9.5
 
       - name: Run nf-test
         run: nf-test test

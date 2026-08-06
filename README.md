@@ -1,3 +1,5 @@
+# nf-nanopore-wholegenome
+
 [![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A525.04.0-23AA62?style=flat)](https://www.nextflow.io/)
 
 [![Docker](https://img.shields.io/badge/docker-enabled-blue?style=flat&logo=docker)](https://www.docker.com/)
