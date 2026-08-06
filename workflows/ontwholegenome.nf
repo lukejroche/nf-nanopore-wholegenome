@@ -27,6 +27,19 @@ workflow ONTWHOLEGENOME {
 
     main:
 
+
+    // Define which analysis to run
+    def parseAnalyses() {
+        (params.analysis ?: '')
+            .split(',')
+            .collect { it.trim().toLowerCase() }
+            .findAll { it }
+        }
+
+    def runAnalysis(String name) {
+        parseAnalyses().contains(name)
+        }
+
     def ch_versions = channel.empty()
     def ch_multiqc_files = channel.empty()
     //
@@ -63,6 +76,9 @@ workflow ONTWHOLEGENOME {
             sort: true,
             newLine: true
         )
+
+
+    
 
     //
     // MODULE: MultiQC
