@@ -1,0 +1,33 @@
+
+Error modules/local/sort/main.nf:7:15: Unexpected character: '\''
+│   7 |     container 'conda "${moduleDir}/environment.yml"
+╰     |               ^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:8:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/modules/local/sort/main.nf'
+│   8 | include { SORT } from '/home/lroche/clinical_genomics/new_nf_ont_whole
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:34:5: `SORT` is not defined
+│  34 |     SORT.run(input.toArray())
+╰     |     ^^^^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:36:9: `SORT` is not defined
+│  36 |     if (SORT.output){
+╰     |         ^^^^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:39:9: `SORT` is not defined
+│  39 |         SORT.out.getNames().each { name ->
+╰     |         ^^^^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:40:36: `SORT` is not defined
+│  40 |             serializeChannel(name, SORT.out.getProperty(name), jsonOut
+╰     |                                    ^^^^
+
+Error .nf-test-e02e2d85fb5115b53f1f1428d1fb8d49.nf:44:21: `SORT` is not defined
+│  44 |         def array = SORT.out as List<Object>
+╰     |                     ^^^^
+
+
+ERROR ~ Script compilation failed
+
+ -- Check '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/e02e2d85fb5115b53f1f1428d1fb8d49/meta/nextflow.log' file for details

@@ -1,0 +1,33 @@
+
+Error modules/local/index/main.nf:6:15: Unexpected character: '\''
+│   6 |     container 'conda "${moduleDir}/environment.yml"
+╰     |               ^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:8:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/modules/local/index/main.nf'
+│   8 | include { INDEX } from '/home/lroche/clinical_genomics/new_nf_ont_whol
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:34:5: `INDEX` is not defined
+│  34 |     INDEX.run(input.toArray())
+╰     |     ^^^^^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:36:9: `INDEX` is not defined
+│  36 |     if (INDEX.output){
+╰     |         ^^^^^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:39:9: `INDEX` is not defined
+│  39 |         INDEX.out.getNames().each { name ->
+╰     |         ^^^^^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:40:36: `INDEX` is not defined
+│  40 |             serializeChannel(name, INDEX.out.getProperty(name), jsonOu
+╰     |                                    ^^^^^
+
+Error .nf-test-1ce378f459a41b40b5eb06f60853745e.nf:44:21: `INDEX` is not defined
+│  44 |         def array = INDEX.out as List<Object>
+╰     |                     ^^^^^
+
+
+ERROR ~ Script compilation failed
+
+ -- Check '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/meta/nextflow.log' file for details

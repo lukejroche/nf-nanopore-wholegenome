@@ -2,7 +2,6 @@ process SORT {
     tag "$meta.id"
     label 'process_single'
 
-    // TODO nf-core: See section in main README for further information regarding finding and adding container addresses to the section below.
     conda "${moduleDir}/environment.yml"
     container 'conda "${moduleDir}/environment.yml"
     container 'mgibio/samtools:v1.21-noble'
@@ -11,7 +10,7 @@ process SORT {
     tuple val(meta), path(bam)
 
     output:
-    tuple val(meta), path("${meta.id}.sorted.bam"), emit: bam
+    tuple val(meta), path(bam), path("${bam}.bai"), emit: bam
     path "versions.yml", emit: versions
 
     when:
@@ -19,8 +18,7 @@ process SORT {
 
     script:
     """
-    samtools sort -@ ${task.cpus} -m 1G -T ${meta.id}.tmp -o ${meta.id}_sorted.bam ${bam}
-    rm -f ${meta.id}.tmp
+    samtools index -@ ${task.cpus} ${bam}
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":

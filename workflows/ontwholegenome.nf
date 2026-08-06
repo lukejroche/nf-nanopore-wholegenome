@@ -27,7 +27,14 @@ workflow ONTWHOLEGENOME {
 
     main:
 
-
+    // parse sample channel
+    ch_bam = Channel.fromPath(params.input)
+    .map { bam ->
+        tuple(
+            [id: bam.baseName],
+            bam
+        )
+    }
     // Define which analysis to run
     def parseAnalyses() {
         (params.analysis ?: '')
@@ -50,7 +57,7 @@ workflow ONTWHOLEGENOME {
     //
     // MODULE: Samtools sort
     //
-    SORT(ch_samplesheet)
+    SORT(ch_bam)
 
     //
     // MODULE: Samtools Index
@@ -86,8 +93,6 @@ workflow ONTWHOLEGENOME {
             newLine: true
         )
 
-
-    
 
     //
     // MODULE: MultiQC

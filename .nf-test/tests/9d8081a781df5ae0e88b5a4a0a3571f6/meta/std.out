@@ -1,0 +1,45 @@
+
+Error workflows/ontwholegenome.nf:12:36: Unexpected input: ''../modules/local/sort/main''
+│  12 | include { SORT                   } '../modules/local/sort/main'
+╰     |                                    ^
+
+Error main.nf:18:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/workflows/ontwholegenome.nf'
+│  18 | include { ONTWHOLEGENOME  } from './workflows/ontwholegenome'
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:19:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/subworkflows/local/utils_nfcore_ontwholegenome_pipeline/main.nf'
+│  19 | include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_n
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:20:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/subworkflows/local/utils_nfcore_ontwholegenome_pipeline/main.nf'
+│  20 | include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_n
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:21:1: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/subworkflows/local/utils_nfcore_ontwholegenome_pipeline/main.nf'
+│  21 | include { getGenomeAttribute      } from './subworkflows/local/utils_n
+╰     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:53:5: `ONTWHOLEGENOME` is not defined
+│  53 |     ONTWHOLEGENOME (
+╰     |     ^^^^^^^^^^^^^^
+
+Error main.nf:75:5: `PIPELINE_INITIALISATION` is not defined
+│  75 |     PIPELINE_INITIALISATION (
+╰     |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:96:5: `PIPELINE_COMPLETION` is not defined
+│  96 |     PIPELINE_COMPLETION (
+╰     |     ^^^^^^^^^^^^^^^^^^^
+
+Error main.nf:61:22: `ONTWHOLEGENOME` is not defined
+│  61 |     multiqc_report = ONTWHOLEGENOME.out.multiqc_report // channel: /pa
+╰     |                      ^^^^^^^^^^^^^^
+
+Error main.nf:91:9: `PIPELINE_INITIALISATION` is not defined
+│  91 |         PIPELINE_INITIALISATION.out.samplesheet
+╰     |         ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ERROR ~ Script compilation failed
+
+ -- Check '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/9d8081a781df5ae0e88b5a4a0a3571f6/meta/nextflow.log' file for details

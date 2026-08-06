@@ -1,0 +1,111 @@
+Aug-06 20:21:15.942 [main] DEBUG nextflow.cli.Launcher - $> nextflow -quiet -log /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/meta/nextflow.log run /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test-1ce378f459a41b40b5eb06f60853745e.nf -c /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/nextflow.config -c /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/tests/nextflow.config -params-file /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/meta/params.json -ansi-log false -profile test -with-trace /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/meta/trace.csv -w /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/work
+Aug-06 20:21:16.132 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.4
+Aug-06 20:21:16.197 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/lroche/.nextflow/plugins; core-plugins: nf-amazon@3.9.2,nf-azure@1.22.6,nf-cloudcache@0.6.0,nf-codecommit@0.5.3,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.21.0,nf-tower@1.28.1,nf-wave@1.21.0
+Aug-06 20:21:16.249 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-06 20:21:16.251 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-06 20:21:16.260 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Aug-06 20:21:16.297 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Aug-06 20:21:16.703 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Aug-06 20:21:16.717 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-06 20:21:16.827 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/nextflow.config
+Aug-06 20:21:16.841 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/nextflow.config
+Aug-06 20:21:16.842 [main] DEBUG nextflow.config.ConfigBuilder - User config file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/tests/nextflow.config
+Aug-06 20:21:16.850 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/nextflow.config
+Aug-06 20:21:16.852 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/nextflow.config
+Aug-06 20:21:16.853 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/tests/nextflow.config
+Aug-06 20:21:16.872 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Aug-06 20:21:16.926 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test`
+Aug-06 20:21:22.415 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test`
+Aug-06 20:21:24.474 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `test`
+Aug-06 20:21:24.506 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [debug, conda, mamba, docker, arm64, emulate_amd64, singularity, podman, shifter, charliecloud, apptainer, wave, gpu, test, test_full, abims, adcra, alice, alliance_canada, apollo, arcc, aws_tower, awsbatch, azurebatch, bi, bigpurple, bih, binac2, biohpc_gen, biowulf, bluebear, cambridge, cannon, cbe, ccga_dx, ccga_cau, ceci_dragon2, ceci_nic5, cedars, ceres, cfc, cfc_dev, cheaha, computerome, create, crg, crick, cropdiversityhpc, crukmi, csiro_petrichor, czbiohub_aws, daisybio, denbi_qbic, dkfz, dirac, ebc, eddie, ebi_codon, ebi_codon_slurm, einstein, embl_hd, engaging, ethz_euler, eva, eva_grace, fgcz, fred_hutch, fsu_draco, fub_curta, genotoul, genouest, giga, gis, googlebatch, hasta, hazel, hki_genie, hypatia, humantechnopole, icr_alma, ifb_core, imb, imperial, incliva, ipop_up, iris, janelia, jax, jex, unsw_katana, ku_sund_danhead, kaust, kelvin2, ki_luria, leicester, lovelace, lrz_cm4, lugh, m3c, maestro, mahuika, mana, marjorie, marvin, mccleary, mcw_rcc, medair, mjolnir_globe, mpcdf, mpcdf_viper, mssm, munin, nci_gadi, nu_genomics, nygc, nyu_hpc, oist, pasteur, pawsey_setonix, pdc_kth, phoenix, psmn, purdue_bell, purdue_gautschi, purdue_negishi, qmul_apocrita, rki, rosalind, rosalind_uge, roslin, sage, sahmri, sanger, ilifu, seadragon, seattlechildrens, seawulf, seg_globe, self_hosted_runner, shu_bmrc, stjude, tes, tigem, tubingen_apg, tufts, tuos_stanage, ucd_sonic, ucl_cscluster, ucl_myriad, uct_hpc, uge, unc_lccc, unc_longleaf, unibe_ibu, unity, uod_hpc, uppmax, utd_juno, uw_hyak_pedslabs, uzh, uzl_omics, vai, verily_workbench, vsc_calcua, vsc_kul_uhasselt, vsc_ugent, wehi, xanadu, york_viking]
+Aug-06 20:21:24.820 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-schema@2.5.1]
+Aug-06 20:21:24.823 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-06 20:21:24.826 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-schema@2.5.1]
+Aug-06 20:21:24.836 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-schema version: 2.5.1
+Aug-06 20:21:25.083 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-schema@2.5.1' resolved
+Aug-06 20:21:25.084 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-schema@2.5.1'
+Aug-06 20:21:25.128 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-schema@2.5.1
+Aug-06 20:21:25.167 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/lroche/.nextflow/secrets/store.json
+Aug-06 20:21:25.185 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7994a0d1] - activable => nextflow.secret.LocalSecretsProvider@7994a0d1
+Aug-06 20:21:25.265 [main] INFO  nextflow.cli.CmdRun - Launching `/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test-1ce378f459a41b40b5eb06f60853745e.nf` [infallible_becquerel] - revision: e7a29909ec
+Aug-06 20:21:25.283 [main] ERROR org.pf4j.AbstractExtensionFinder - Different class loaders: 'org.pf4j.PluginClassLoader@5d7dd549' (E) and 'jdk.internal.loader.ClassLoaders$AppClassLoader@251a69d7' (EP)
+Aug-06 20:21:25.511 [main] WARN  nextflow.config.ConfigValidator - Unrecognized config option 'validation.defaultIgnoreParams'
+Aug-06 20:21:25.513 [main] WARN  nextflow.config.ConfigValidator - Unrecognized config option 'validation.monochromeLogs'
+Aug-06 20:21:25.786 [main] DEBUG nextflow.Session - Session UUID: 99f1b074-1c93-4afa-84d6-91483a0a47ab
+Aug-06 20:21:25.789 [main] DEBUG nextflow.Session - Run name: infallible_becquerel
+Aug-06 20:21:25.791 [main] DEBUG nextflow.Session - Executor pool size: 4
+Aug-06 20:21:25.838 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Aug-06 20:21:25.870 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Aug-06 20:21:25.948 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.4 build 12445
+  Created: 17-06-2026 16:30 UTC (17:30 BST)
+  System: Linux 6.18.33.2-microsoft-standard-WSL2
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 17.0.7+4-jvmci-23.0-b10
+  Encoding: UTF-8 (UTF-8)
+  Process: 17551@X15 [127.0.1.1]
+  CPUs: 4 - Mem: 5.7 GB (4.4 GB) - Swap: 2 GB (2 GB)
+Aug-06 20:21:26.011 [main] DEBUG nextflow.Session - Work-dir: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/work [ext2/ext3]
+Aug-06 20:21:26.012 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/bin
+Aug-06 20:21:26.035 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-06 20:21:26.061 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Aug-06 20:21:26.068 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Aug-06 20:21:26.113 [main] DEBUG nextflow.Session - Observer factory (v2): ValidationObserverFactory
+Aug-06 20:21:26.191 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-06 20:21:26.213 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Aug-06 20:21:26.381 [main] DEBUG nextflow.Session - Session start
+Aug-06 20:21:26.397 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/.nf-test/tests/1ce378f459a41b40b5eb06f60853745e/meta/trace.csv
+Aug-06 20:21:26.404 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Aug-06 20:21:27.198 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+Aug-06 20:21:27.251 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Aug-06 20:21:27.277 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Aug-06 20:21:28.602 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Aug-06 20:21:28.786 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Aug-06 20:21:28.842 [main] ERROR nextflow.cli.Launcher - Script compilation failed
+nextflow.exception.ScriptCompilationException: Script compilation failed
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse0(ScriptLoaderV2.groovy:129)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy:81)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse(ScriptLoaderV2.groovy)
+	at nextflow.script.ScriptRunner.parseScript(ScriptRunner.groovy:215)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:126)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+_nf_script_814f6e43deb9ce77: 6: Unexpected character: '\'' @ line 6, column 15.
+       container 'conda "${moduleDir}/environment.yml"
+                 ^
+
+Main: 8: Module could not be parsed: '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/modules/local/index/main.nf' @ line 8, column 1.
+   include { INDEX } from '/home/lroche/clinical_genomics/new_nf_ont_wholegenome/nf-core-ontwholegenome/modules/local/index/tests/../main.nf'
+   ^
+
+Main: 34: `INDEX` is not defined @ line 34, column 5.
+       INDEX.run(input.toArray())
+       ^
+
+Main: 36: `INDEX` is not defined @ line 36, column 9.
+       if (INDEX.output){
+           ^
+
+Main: 39: `INDEX` is not defined @ line 39, column 9.
+           INDEX.out.getNames().each { name ->
+           ^
+
+Main: 40: `INDEX` is not defined @ line 40, column 36.
+               serializeChannel(name, INDEX.out.getProperty(name), jsonOutput, params.nf_test_output)
+                                      ^
+
+Main: 44: `INDEX` is not defined @ line 44, column 21.
+           def array = INDEX.out as List<Object>
+                       ^
+
+7 errors
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:292)
+	at org.codehaus.groovy.control.CompilationUnit$ISourceUnitOperation.doPhaseOperation(CompilationUnit.java:878)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:660)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:634)
+	at nextflow.script.parser.v2.ScriptCompiler.compile0(ScriptCompiler.java:146)
+	at nextflow.script.parser.v2.ScriptCompiler.compile(ScriptCompiler.java:112)
+	at nextflow.script.parser.v2.ScriptLoaderV2.parse0(ScriptLoaderV2.groovy:114)
+	... 7 common frames omitted
