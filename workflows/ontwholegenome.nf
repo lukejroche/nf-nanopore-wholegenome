@@ -9,7 +9,7 @@ include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_ontwholegenome_pipeline'
-
+include { SORT                   } '../modules/local/sort/main'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
@@ -35,7 +35,6 @@ workflow ONTWHOLEGENOME {
             .collect { it.trim().toLowerCase() }
             .findAll { it }
         }
-
     def runAnalysis(String name) {
         parseAnalyses().contains(name)
         }
@@ -47,6 +46,16 @@ workflow ONTWHOLEGENOME {
     //
     FASTQC(ch_samplesheet)
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
+
+    //
+    // MODULE: Samtools sort
+    //
+    SORT(ch_samplesheet)
+
+    //
+    // MODULE: Samtools Index
+    //
+    INDEX(SORT.out.bam)
 
     //
     // Collate and save software versions
