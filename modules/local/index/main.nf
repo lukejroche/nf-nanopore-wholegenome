@@ -1,16 +1,15 @@
-process SORT {
+process INDEX {
     tag "$meta.id"
     label 'process_single'
 
     conda "${moduleDir}/environment.yml"
-    container 'conda "${moduleDir}/environment.yml"
     container 'mgibio/samtools:v1.21-noble'
 
     input:
-    tuple val(meta), path(bam)
+    tuple val(meta), path(bam), path(reference)
 
     output:
-    tuple val(meta), path(bam), path("${bam}.bai"), emit: bam
+    tuple val(meta), path(bam), path("${bam}.bai"), path(reference), emit: bam
     path "versions.yml", emit: versions
 
     when:

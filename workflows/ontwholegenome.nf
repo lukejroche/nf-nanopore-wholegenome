@@ -9,12 +9,23 @@ include { paramsSummaryMap       } from 'plugin/nf-schema'
 include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_ontwholegenome_pipeline'
-include { SORT                   } '../modules/local/sort/main'
+include { SORT                   } from '../modules/local/sort/main'
+include { INDEX                  } from '../modules/local/index/main'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+// analysis parse helper functions
+def parseAnalyses() {
+        (params.analysis ?: '')
+            .split(',')
+            .collect { it.trim().toLowerCase() }
+            .findAll { it }
+        }
+def runAnalysis(String name) {
+    parseAnalyses().contains(name)
+    }
 
 workflow ONTWHOLEGENOME {
 
@@ -28,23 +39,18 @@ workflow ONTWHOLEGENOME {
     main:
 
     // parse sample channel
-    ch_bam = Channel.fromPath(params.input)
-    .map { bam ->
+    ch_bam = Channel
+    .fromPath(params.input)
+    .splitCsv(header: true)
+    .map { row ->
         tuple(
-            [id: bam.baseName],
-            bam
+            [
+                id: row.sample
+            ],
+            file(row.bam),
+            file(row.reference)
         )
     }
-    // Define which analysis to run
-    def parseAnalyses() {
-        (params.analysis ?: '')
-            .split(',')
-            .collect { it.trim().toLowerCase() }
-            .findAll { it }
-        }
-    def runAnalysis(String name) {
-        parseAnalyses().contains(name)
-        }
 
     def ch_versions = channel.empty()
     def ch_multiqc_files = channel.empty()

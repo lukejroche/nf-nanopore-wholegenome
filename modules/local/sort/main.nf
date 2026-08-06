@@ -4,14 +4,13 @@ process SORT {
 
     // TODO nf-core: See section in main README for further information regarding finding and adding container addresses to the section below.
     conda "${moduleDir}/environment.yml"
-    container 'conda "${moduleDir}/environment.yml"
     container 'mgibio/samtools:v1.21-noble'
 
     input:
-    tuple val(meta), path(bam)
+    tuple val(meta), path(bam), path(reference)
 
     output:
-    tuple val(meta), path("${meta.id}.sorted.bam"), emit: bam
+    tuple val(meta), path("${meta.id}.sorted.bam"), path(reference), emit: bam
     path "versions.yml", emit: versions
 
     when:
