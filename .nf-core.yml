@@ -1,0 +1,17 @@
+repository_type: pipeline
+
+nf_core_version: 4.1.0
+
+lint: {}
+
+template:
+  org: nf-core
+  name: ontwholegenome
+  description: ONT Whole Genome Variant Calling
+  author: Luke Roche
+  version: 1.0.0dev
+  force: true
+  outdir: .
+  skip_features:
+    - gpu
+  is_nfcore: true
