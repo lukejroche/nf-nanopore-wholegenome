@@ -1,6 +1,16 @@
+[![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A525.04.0-23AA62?style=flat)](https://www.nextflow.io/)
+
+[![Docker](https://img.shields.io/badge/docker-enabled-blue?style=flat&logo=docker)](https://www.docker.com/)
+
+[![nf-core](https://img.shields.io/badge/nf--core-compatible-green?style=flat)](https://nf-co.re/)
+
+[![nf-test](https://github.com/lukejroche/nf-nanopore-wholegenome/actions/workflows/nf-test.yml/badge.svg)](https://github.com/lukejroche/nf-nanopore-wholegenome/actions/workflows/nf-test.yml)
+
+[![nf-core lint](https://github.com/lukejroche/nf-nanopore-wholegenome/actions/workflows/lint.yml/badge.svg)](https://github.com/lukejroche/nf-nanopore-wholegenome/actions/workflows/lint.yml)
+
 *Work in progess*
 
-# ont-multiomics-nf
+# Info
 
 Long-read (Oxford Nanopore) multi-omics pipeline QC, SNV
 (Clair3), SV (Sniffles2), STR (Straglr), CNV (mosdepth + Spectre) and

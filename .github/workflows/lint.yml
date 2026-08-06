@@ -1,0 +1,25 @@
+name: nf-core lint
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Nextflow
+        uses: nf-core/setup-nextflow@v2
+
+      - name: Install nf-core tools
+        uses: nf-core/setup-nf-core@v2
+
+      - name: Run nf-core lint
+        run: nf-core lint .
