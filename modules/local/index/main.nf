@@ -3,7 +3,7 @@ process INDEX {
     label 'process_single'
 
     conda "${moduleDir}/environment.yml"
-    container 'mgibio/samtools:v1.21-noble'
+    container 'docker.io/mgibio/samtools:v1.21-noble'
 
     input:
     tuple val(meta), path(bam), path(reference)
